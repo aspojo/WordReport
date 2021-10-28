@@ -2,7 +2,6 @@ package com.aspojo.word;
 
 
 import cn.hutool.core.collection.CollectionUtil;
-import cn.hutool.poi.word.WordUtil;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
@@ -21,7 +20,6 @@ public class WordReportTest {
     @Test
     public void testMergeCell() throws Exception {
 
-        @SuppressWarnings("resource")
         XWPFDocument document = new XWPFDocument();
 
         XWPFParagraph paragraph = document.createParagraph();
