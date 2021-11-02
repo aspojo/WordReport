@@ -12,7 +12,6 @@ for specific usage, refer to the test case
     <groupId>top.logbug.wordreport</groupId>
     <artifactId>wordreport</artifactId>
     <version>1.0</version>
-    <type>pom</type>
 </dependency>
 ```
 ## 基本用法(Basic usage)：
