@@ -6,7 +6,15 @@
 Export the docx report according to the template. 
 Template syntax support: variable expression, foreach loop (support infinite nesting), if, Merge (merge cells in the vertical direction).
 for specific usage, refer to the test case
-
+## 添加依赖
+``` xml
+<dependency>
+    <groupId>top.logbug.wordreport</groupId>
+    <artifactId>wordreport</artifactId>
+    <version>1.0</version>
+    <type>pom</type>
+</dependency>
+```
 ## 基本用法(Basic usage)：
 ``` java 
         Map<String, Object> context = new HashMap<>();

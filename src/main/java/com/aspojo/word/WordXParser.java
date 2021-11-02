@@ -21,7 +21,6 @@ import java.util.regex.Pattern;
 /**
  * @author : aspojo
  * @version : 1.0.0.0
- * @date : Created at 10/28/2021
  */
 public class WordXParser {
     static String ifPrefix = "$if_";
@@ -76,6 +75,10 @@ public class WordXParser {
 
     /**
      * 垂直合并单元格
+     * @param table 表
+     * @param col 列
+     * @param fromRow 起始行
+     * @param toRow 结束行
      */
     public static void mergeCellVertically(XWPFTable table, int col, int fromRow, int toRow) {
         for (int rowIndex = fromRow; rowIndex <= toRow; rowIndex++) {
@@ -103,6 +106,10 @@ public class WordXParser {
 
     /**
      * 水平合并单元格
+     * @param table 表
+     * @param row 行
+     * @param fromCol 起始列
+     * @param toCol 结束列
      */
     public static void mergeCellHorizontally(XWPFTable table, int row, int fromCol, int toCol) {
         for (int colIndex = fromCol; colIndex <= toCol; colIndex++) {
@@ -130,6 +137,9 @@ public class WordXParser {
 
     /**
      * 拷贝一个table但是没有加入doc
+     * @param doc dom
+     * @param sourceTable 原表
+     * @return 新表
      */
     public static XWPFTable copyTable(XWPFDocument doc, XWPFTable sourceTable) {
         // Copying a existing table
@@ -145,6 +155,9 @@ public class WordXParser {
 
     /**
      * 拷贝一行
+     * @param row 行
+     * @param targetTable 目标表
+     * @return 新行
      */
     public static XWPFTableRow copyTableRow(XWPFTableRow row, XWPFTable targetTable) {
         CTRow ctRow = CTRow.Factory.newInstance();
@@ -415,6 +428,8 @@ public class WordXParser {
 
     /**
      * 是否在构造表格
+     * @param scope 作用域
+     * @return 是否
      */
     protected boolean isLoopRow(Scope scope) {
         return scope.children.size() == 1 && scope.children.get(0) instanceof XWPFTable;
@@ -522,6 +537,8 @@ public class WordXParser {
 
     /**
      * 将新文本填充到段落中
+     * @param p 段落
+     * @param textList 待填充内容
      */
     public void changeParagraphText(XWPFParagraph p, List<Object> textList) {
         if (p == null) {
